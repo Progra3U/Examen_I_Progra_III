@@ -1,0 +1,13 @@
+Se requiere de una base de datos que contenga las tablas:
+Nombre Base de Datos:
+	ExamenIPrograII
+
+Tabla para Ejercicio 01, 
+Tabla para Ejercicio 04:
+	Perfiles
+	PerfilesxUsuarios
+	Usuarios
+Tabla para Ejercicio 02:
+	RegistroPersonal
+Tabla para Ejercicio 03:
+	RegistroPersonas
