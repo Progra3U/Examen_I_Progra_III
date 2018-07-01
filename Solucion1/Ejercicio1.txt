@@ -9,4 +9,4 @@ Deberá desarrollar un programa donde permita el proceso de inicio de sesión, d
 	-Validar que si existe clave este correcta
 	-Validar que aunque clave y usuario correcto, el estado del usuario sea activo.
 	-Restringir a 3 intentos 
-En el momento de un inicio de sesión exitoso deberá abrir otro formulario de bienvenida o paina de inicio.
+En el momento de un inicio de sesión exitoso deberá abrir otro formulario de bienvenida o pagina de inicio.
