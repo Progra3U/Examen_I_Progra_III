@@ -1,0 +1,12 @@
+Para todo ejercicio debe cumplirse:
+	Debe estar construido cada ejercicio en soluciones aparte con sus diferentes capas
+	Debe utilizar para transición de información entre capaz nada mas objetos o listas de objetos
+	Para la conexión y ejecución en base de datos puede utilizar ADO.Net Clasico o Entitiy Framework.
+
+Programa a Desarrollar:
+Deberá desarrollar un programa donde permita el proceso de inicio de sesión, donde se debe cumplir:
+	-Validar que usuario exista
+	-Validar que si existe clave este correcta
+	-Validar que aunque clave y usuario correcto, el estado del usuario sea activo.
+	-Restringir a 3 intentos 
+En el momento de un inicio de sesión exitoso deberá abrir otro formulario de bienvenida o paina de inicio.

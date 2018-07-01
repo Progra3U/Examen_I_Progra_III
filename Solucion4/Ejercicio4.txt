@@ -1,0 +1,7 @@
+Para todo ejercicio debe cumplirse:
+	Debe estar construido cada ejercicio en soluciones aparte con sus diferentes capas
+	Debe utilizar para transición de información entre capaz nada mas objetos o listas de objetos
+	Para la conexión y ejecución en base de datos puede utilizar ADO.Net Clasico o Entitiy Framework.
+
+Programa a Desarrollar:
+	-Deberá crear un programa donde al iniciar sesión el formulario menú muestre -solamente las opciones que le corresponda según el perfil asignado al usuario. -Además de mostrar el nombre del usuario en la parte inferior del formulario. 

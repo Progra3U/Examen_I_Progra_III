@@ -1,0 +1,17 @@
+Para todo ejercicio debe cumplirse:
+	Debe estar construido cada ejercicio en soluciones aparte con sus diferentes capas
+	Debe utilizar para transición de información entre capaz nada mas objetos o listas de objetos
+	Para la conexión y ejecución en base de datos puede utilizar ADO.Net Clasico o Entitiy Framework.
+
+Programa a Desarrollar:
+	-Deberá crear un formulario para conservar el registro de una persona. 
+	-Donde se valide por expresión regular los puntos como: 
+		A. correo electrónico, 
+		B. edad, 
+		C. identificación y 
+		D. cualquier otro campo que considere necesario. 
+	-Este formulario deberá permitir:
+		A. agregar, 
+		B. modificar,  
+		C. eliminar y 
+		D. listar los registros de expediente de cada funcionario.
