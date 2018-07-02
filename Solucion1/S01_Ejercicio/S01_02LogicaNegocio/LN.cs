@@ -34,7 +34,48 @@ namespace S01_02LogicaNegocio
                 throw ex;
             }
         }
-      
+        public static int ModificarUsuarios(Usuario usuarios)
+        {
+            try
+            {
+                ArrayList lstparametros = new ArrayList(); //se define lista de valores
+                SQLSentencia sentencia = new SQLSentencia();
+
+                sentencia.PETICION = @"UPDATE Usuarios SET pass = @pass, activo = @activo WHERE nombreUsuario = @nombreUsuario";
+
+                //Defino parametros y sus caracteristicas
+                SqlParameter nomusuarioparametro = new SqlParameter();
+                nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
+                nomusuarioparametro.Value = usuarios.nombreUsuario;
+
+                SqlParameter passparametro = new SqlParameter();
+                passparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                passparametro.ParameterName = "@pass";
+                passparametro.Value = usuarios.pass;
+
+                SqlParameter activoparametro = new SqlParameter();
+                activoparametro.SqlDbType = System.Data.SqlDbType.Bit;
+                activoparametro.ParameterName = "@activo";
+                activoparametro.Value = usuarios.activo;
+
+                //Agregando en la lista de valores 
+                lstparametros.Add(nomusuarioparametro);
+                lstparametros.Add(passparametro);
+                lstparametros.Add(activoparametro);
+
+                //Asigna al atributo de la clase SQLSentencia la lista de valores
+                sentencia.LSTPARAMETROS = lstparametros;
+
+                Acceso objacceso = new Acceso();
+                return objacceso.Ejecutar_TSQL(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool VerificarUsuario(Usuario usuario)
         {
             try
@@ -80,6 +121,7 @@ namespace S01_02LogicaNegocio
         }
     }
     #endregion
+
 }
 
 
