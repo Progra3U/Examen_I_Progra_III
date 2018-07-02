@@ -12,19 +12,19 @@ namespace S04_04Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Usuarios
     {
-        public Usuario()
+        public Usuarios()
         {
-            this.Perfiles = new HashSet<Perfile>();
+            this.Perfiles = new HashSet<Perfiles>();
         }
     
         public string nombreUsuario { get; set; }
         public string pass { get; set; }
         public bool activo { get; set; }
     
-        public virtual Usuario Usuarios1 { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
-        public virtual ICollection<Perfile> Perfiles { get; set; }
+        public virtual Usuarios Usuarios1 { get; set; }
+        public virtual Usuarios Usuario1 { get; set; }
+        public virtual ICollection<Perfiles> Perfiles { get; set; }
     }
 }
