@@ -27,7 +27,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ExamenIPrograIIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="RegistroPersona">
+        <EntityType Name="RegistroPersonas">
           <Key>
             <PropertyRef Name="identificacion" />
           </Key>
@@ -42,7 +42,7 @@
           <Property Name="detalles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ExamenIPrograIIIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RegistroPersonas" EntityType="Self.RegistroPersona" />
+          <EntitySet Name="RegistroPersonas1" EntityType="ExamenIPrograIIIModel.RegistroPersonas" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -50,8 +50,8 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ExamenIPrograIIIModelStoreContainer" CdmEntityContainer="ExamenIPrograIIIEntities">
-          <EntitySetMapping Name="RegistroPersonas">
-            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.RegistroPersona">
+          <EntitySetMapping Name="RegistroPersonas1">
+            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.RegistroPersonas">
               <MappingFragment StoreEntitySet="RegistroPersonas">
                 <ScalarProperty Name="identificacion" ColumnName="identificacion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

@@ -47,14 +47,13 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.splitter2 = new System.Windows.Forms.Splitter();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscarPorId = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtBuscarId = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +191,7 @@
             // 
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.Location = new System.Drawing.Point(473, 106);
+            this.txtEdad.MaxLength = 2;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(174, 26);
             this.txtEdad.TabIndex = 17;
@@ -200,6 +200,7 @@
             // 
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(179, 109);
+            this.txtIdentificacion.MaxLength = 9;
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(174, 26);
             this.txtIdentificacion.TabIndex = 15;
@@ -216,6 +217,7 @@
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(473, 151);
+            this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(174, 26);
             this.txtTelefono.TabIndex = 19;
@@ -230,93 +232,90 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Telefono:";
             // 
-            // splitter1
-            // 
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 376);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(679, 291);
-            this.splitter1.TabIndex = 20;
-            this.splitter1.TabStop = false;
-            // 
-            // splitter2
-            // 
-            this.splitter2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter2.Location = new System.Drawing.Point(0, 293);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(679, 83);
-            this.splitter2.TabIndex = 21;
-            this.splitter2.TabStop = false;
-            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(35, 322);
+            this.btnAgregar.Location = new System.Drawing.Point(35, 283);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 28);
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(239, 324);
+            this.btnEliminar.Location = new System.Drawing.Point(219, 283);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 28);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscarPorId
             // 
-            this.btnBuscarPorId.Location = new System.Drawing.Point(342, 324);
+            this.btnBuscarPorId.Location = new System.Drawing.Point(300, 283);
             this.btnBuscarPorId.Name = "btnBuscarPorId";
-            this.btnBuscarPorId.Size = new System.Drawing.Size(114, 28);
+            this.btnBuscarPorId.Size = new System.Drawing.Size(93, 28);
             this.btnBuscarPorId.TabIndex = 26;
             this.btnBuscarPorId.Text = "Buscar por Id";
             this.btnBuscarPorId.UseVisualStyleBackColor = true;
+            this.btnBuscarPorId.Click += new System.EventHandler(this.btnBuscarPorId_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(139, 324);
+            this.btnModificar.Location = new System.Drawing.Point(128, 283);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 28);
             this.btnModificar.TabIndex = 28;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtBuscarId
             // 
             this.txtBuscarId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarId.Location = new System.Drawing.Point(480, 324);
+            this.txtBuscarId.Location = new System.Drawing.Point(399, 285);
+            this.txtBuscarId.MaxLength = 9;
             this.txtBuscarId.Name = "txtBuscarId";
             this.txtBuscarId.Size = new System.Drawing.Size(167, 26);
             this.txtBuscarId.TabIndex = 29;
+            this.txtBuscarId.Tag = "";
             // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 382);
+            this.dataGridView.Location = new System.Drawing.Point(12, 317);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(655, 273);
+            this.dataGridView.Size = new System.Drawing.Size(655, 189);
             this.dataGridView.TabIndex = 30;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(572, 283);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 28);
+            this.btnLimpiar.TabIndex = 31;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 667);
+            this.ClientSize = new System.Drawing.Size(679, 518);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.txtBuscarId);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBuscarPorId);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.splitter2);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtApellido);
@@ -337,7 +336,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,14 +366,13 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscarPorId;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtBuscarId;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

@@ -12,7 +12,7 @@ namespace S03_04Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class RegistroPersona
+    public partial class RegistroPersonas
     {
         public int identificacion { get; set; }
         public string nombre { get; set; }

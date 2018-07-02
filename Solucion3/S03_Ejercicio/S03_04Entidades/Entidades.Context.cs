@@ -25,6 +25,6 @@ namespace S03_04Entidades
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<RegistroPersona> RegistroPersonas { get; set; }
+        public DbSet<RegistroPersonas> RegistroPersonas1 { get; set; }
     }
 }
