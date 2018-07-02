@@ -25,7 +25,7 @@ namespace S04_04Entidades
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Perfile> Perfiles { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Perfiles> Perfiles1 { get; set; }
+        public DbSet<Usuarios> Usuarios1 { get; set; }
     }
 }

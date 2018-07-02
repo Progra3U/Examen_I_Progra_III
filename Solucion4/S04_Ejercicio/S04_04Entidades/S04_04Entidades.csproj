@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Perfiles.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQLSentencia.cs" />
     <Compile Include="Entidades.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,11 +67,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entidades.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Perfile.cs">
-      <DependentUpon>Entidades.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario.cs">
+    <Compile Include="Usuarios.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
   </ItemGroup>
