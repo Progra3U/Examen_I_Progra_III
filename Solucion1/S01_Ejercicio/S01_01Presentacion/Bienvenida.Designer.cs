@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.NOMBREUSUARIO = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // NOMBREUSUARIO
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 143);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.NOMBREUSUARIO.AutoSize = true;
+            this.NOMBREUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NOMBREUSUARIO.Location = new System.Drawing.Point(123, 136);
+            this.NOMBREUSUARIO.Name = "NOMBREUSUARIO";
+            this.NOMBREUSUARIO.Size = new System.Drawing.Size(317, 20);
+            this.NOMBREUSUARIO.TabIndex = 0;
+            this.NOMBREUSUARIO.Text = "   BIENVENIDO A NUESTRA APLICACION";
+            this.NOMBREUSUARIO.Click += new System.EventHandler(this.label1_Click);
             // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 362);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NOMBREUSUARIO);
             this.Name = "Bienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenida";
@@ -57,6 +58,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NOMBREUSUARIO;
     }
 }
