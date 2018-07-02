@@ -1,6 +1,6 @@
 Se requiere de una base de datos que contenga las tablas:
 Nombre Base de Datos:
-	ExamenIPrograII
+	ExamenIPrograIII
 
 Tabla para Ejercicio 01, 
 Tabla para Ejercicio 04:
