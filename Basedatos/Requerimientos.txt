@@ -11,3 +11,6 @@ Tabla para Ejercicio 02:
 	RegistroPersonal
 Tabla para Ejercicio 03:
 	RegistroPersonas
+
+nombre de la conexion:
+	conexion
