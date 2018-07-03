@@ -95,9 +95,9 @@ namespace S02_02LogicaNegocio
                 ArrayList lstparametros = new ArrayList(); //se define lista de valores
                 SQLSentencia sentencia = new SQLSentencia();
 
-                sentencia.PETICION = @"UPDATE RegistroPersonas SET nombreEmpleado= @nombreEmpleado, identificacion= @identificacion, posicion= @posicion, 
-                                                                     area= @area, Fecha= @Fecha, HoraEntrada= @HoraEntrada, HoraSalida= @HoraSalida
-                                                                     WHERE codEmpleado=@codEmpleado";
+                sentencia.PETICION = @"UPDATE RegistroPersonas SET nombreEmpleado= @nombreEmpleado, identificacion= @identificacion, posicion= @posicion, area= @area, 
+                                                                    FechaEntrada= @FechaEntrada, HoraEntrada= @HoraEntrada, FechaSalida= @FechaSalida, HoraSalida= @HoraSalida
+                                                                    WHERE codEmpleado=@codEmpleado";
 
                 #region Definicion de parametros
                 SqlParameter codEmpleado = new SqlParameter();
@@ -125,19 +125,24 @@ namespace S02_02LogicaNegocio
                 area.ParameterName = "@area";
                 area.Value = Regpersonal.area;
 
-                SqlParameter Fecha = new SqlParameter();
-                Fecha.SqlDbType = System.Data.SqlDbType.NVarChar;
-                Fecha.ParameterName = "@Fecha";
-                Fecha.Value = Regpersonal.Fecha;
+                SqlParameter FechaEntrada = new SqlParameter();
+                FechaEntrada.SqlDbType = System.Data.SqlDbType.NVarChar;
+                FechaEntrada.ParameterName = "--/--/--";
+                FechaEntrada.Value = Regpersonal.FechaEntrada;
 
                 SqlParameter HoraEntrada = new SqlParameter();
                 HoraEntrada.SqlDbType = System.Data.SqlDbType.NVarChar;
-                HoraEntrada.ParameterName = "@HoraEntrada";
+                HoraEntrada.ParameterName = "--:--";
                 HoraEntrada.Value = Regpersonal.HoraEntrada;
+
+                SqlParameter FechaSalida = new SqlParameter();
+                FechaSalida.SqlDbType = System.Data.SqlDbType.NVarChar;
+                FechaSalida.ParameterName = "--/--/--";
+                FechaSalida.Value = Regpersonal.FechaSalida;
 
                 SqlParameter HoraSalida = new SqlParameter();
                 HoraSalida.SqlDbType = System.Data.SqlDbType.NVarChar;
-                HoraSalida.ParameterName = "@HoraSalida";
+                HoraSalida.ParameterName = "--:--";
                 HoraSalida.Value = Regpersonal.HoraSalida;
                 #endregion
 
@@ -147,8 +152,97 @@ namespace S02_02LogicaNegocio
                 lstparametros.Add(identificacion);
                 lstparametros.Add(posicion);
                 lstparametros.Add(area);
-                lstparametros.Add(Fecha);
+                lstparametros.Add(FechaEntrada);
                 lstparametros.Add(HoraEntrada);
+                lstparametros.Add(FechaSalida);
+                lstparametros.Add(HoraSalida);
+                #endregion
+
+                //Asigna al atributo de la clase SQLSentencia la lista de valores
+                sentencia.LSTPARAMETROS = lstparametros;
+
+                Acceso objconexion = new Acceso();
+                return objconexion.Ejecutar_TSQL(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static int ModificarHoraEntrada(RegistroPersonal Regpersonal)
+        {
+            try
+            {
+                ArrayList lstparametros = new ArrayList(); //se define lista de valores
+                SQLSentencia sentencia = new SQLSentencia();
+
+                sentencia.PETICION = @"UPDATE RegistroPersonas SET FechaEntrada= @FechaEntrada, HoraEntrada= @HoraEntrada WHERE codEmpleado=@codEmpleado";
+
+                #region Definicion de parametros
+                SqlParameter codEmpleado = new SqlParameter();
+                codEmpleado.SqlDbType = System.Data.SqlDbType.Int;
+                codEmpleado.ParameterName = "@codEmpleado";
+                codEmpleado.Value = Regpersonal.codEmpleado;
+
+                SqlParameter FechaEntrada = new SqlParameter();
+                FechaEntrada.SqlDbType = System.Data.SqlDbType.NVarChar;
+                FechaEntrada.ParameterName = "@FechaEntrada";
+                FechaEntrada.Value = Regpersonal.FechaEntrada;
+
+                SqlParameter HoraEntrada = new SqlParameter();
+                HoraEntrada.SqlDbType = System.Data.SqlDbType.NVarChar;
+                HoraEntrada.ParameterName = "@HoraEntrada";
+                HoraEntrada.Value = Regpersonal.HoraEntrada;
+                #endregion
+
+                #region  Agregando en la lista de valores 
+                lstparametros.Add(codEmpleado);
+                lstparametros.Add(FechaEntrada);
+                lstparametros.Add(HoraEntrada);
+                #endregion
+
+                //Asigna al atributo de la clase SQLSentencia la lista de valores
+                sentencia.LSTPARAMETROS = lstparametros;
+
+                Acceso objconexion = new Acceso();
+                return objconexion.Ejecutar_TSQL(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static int ModificarHoraSalida(RegistroPersonal Regpersonal)
+        {
+            try
+            {
+                ArrayList lstparametros = new ArrayList(); //se define lista de valores
+                SQLSentencia sentencia = new SQLSentencia();
+
+                sentencia.PETICION = @"UPDATE RegistroPersonas SET FechaSalida= @FechaSalida, HoraSalida= @HoraSalida WHERE codEmpleado=@codEmpleado";
+
+                #region Definicion de parametros
+                SqlParameter codEmpleado = new SqlParameter();
+                codEmpleado.SqlDbType = System.Data.SqlDbType.Int;
+                codEmpleado.ParameterName = "@codEmpleado";
+                codEmpleado.Value = Regpersonal.codEmpleado;
+
+                SqlParameter FechaSalida = new SqlParameter();
+                FechaSalida.SqlDbType = System.Data.SqlDbType.NVarChar;
+                FechaSalida.ParameterName = "@FechaSalida";
+                FechaSalida.Value = Regpersonal.FechaSalida;
+
+                SqlParameter HoraSalida = new SqlParameter();
+                HoraSalida.SqlDbType = System.Data.SqlDbType.NVarChar;
+                HoraSalida.ParameterName = "@HoraSalida";
+                HoraSalida.Value = Regpersonal.HoraSalida;
+                #endregion
+
+                #region  Agregando en la lista de valores 
+                lstparametros.Add(codEmpleado);
+                lstparametros.Add(FechaSalida);
                 lstparametros.Add(HoraSalida);
                 #endregion
 

@@ -80,20 +80,30 @@ namespace S02_01Presentacion
         #endregion
 
         #region Accion de botones
+        private RegistroPersonal procesobase()
+        {
+            RegistroPersonal personal = new RegistroPersonal();
+
+            string hora, fecha;
+            hora = DateTime.Now.ToString("hh:mm");
+            fecha = DateTime.Now.ToString("dd/MM/yyyy");
+
+            personal.codEmpleado = Convert.ToInt32(txtCodigoEmpleado.Text.Trim());
+            personal.nombreEmpleado = txtNombre.Text.Trim();
+            personal.identificacion = txtIdEmpleado.Text.Trim();
+            personal.posicion = txtPosicion.Text.Trim();
+            personal.area = txtArea.Text.Trim();
+            personal.FechaEntrada = fecha;
+            personal.HoraEntrada = hora;
+            personal.FechaSalida = fecha;
+            personal.HoraSalida = fecha;
+            return personal;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                RegistroPersonal personal = new RegistroPersonal();
-                personal.codEmpleado = Convert.ToInt32(txtCodigoEmpleado.Text.Trim());
-                personal.nombreEmpleado = txtNombre.Text.Trim();
-                personal.identificacion = txtIdEmpleado.Text.Trim();
-                personal.posicion = txtPosicion.Text.Trim();
-                personal.area = txtArea.Text.Trim();
-                personal.Fecha = "--/--/----";
-                personal.HoraEntrada = "--:--";
-                personal.HoraSalida = "--:--";
-                S02_02LogicaNegocio.Logica.AgregarPersonal(personal);
+                S02_02LogicaNegocio.Logica.AgregarPersonal(procesobase());
                 CargarPersonal(); Limpiar();
 
             }
@@ -108,21 +118,7 @@ namespace S02_01Presentacion
         {
             try
             {
-                RegistroPersonal personal = new RegistroPersonal();
-
-                string hora, fecha;
-                hora = DateTime.Now.ToString("hh:mm");
-                fecha = DateTime.Now.ToString("dd/MM/yyyy");
-
-                personal.codEmpleado = Convert.ToInt32(txtCodigoEmpleado.Text.Trim());
-                personal.nombreEmpleado = txtNombre.Text.Trim();
-                personal.identificacion = txtIdEmpleado.Text.Trim();
-                personal.posicion = txtPosicion.Text.Trim();
-                personal.area = txtArea.Text.Trim();
-                //personal.Fecha = "--/--/----";
-                //personal.HoraEntrada = "--:--";
-                //personal.HoraSalida = "--:--";
-                S02_02LogicaNegocio.Logica.ModificarPersonal(personal);
+                S02_02LogicaNegocio.Logica.ModificarPersonal(procesobase());
                 CargarPersonal(); Limpiar();
                                 
             }
@@ -167,21 +163,7 @@ namespace S02_01Presentacion
         {
             try
             {
-                RegistroPersonal personal = new RegistroPersonal();
-
-                string hora, fecha;
-                hora = DateTime.Now.ToString("hh:mm");
-                fecha = DateTime.Now.ToString("dd/MM/yyyy");
-
-                personal.codEmpleado = Convert.ToInt32(txtCodigoEmpleado.Text.Trim());
-                personal.nombreEmpleado = txtNombre.Text.Trim();
-                personal.identificacion = txtIdEmpleado.Text.Trim();
-                personal.posicion = txtPosicion.Text.Trim();
-                personal.area = txtArea.Text.Trim();
-                personal.Fecha = fecha;
-                personal.HoraEntrada = hora;
-                personal.HoraSalida = "--:--";
-                S02_02LogicaNegocio.Logica.ModificarPersonal(personal);
+                S02_02LogicaNegocio.Logica.ModificarHoraEntrada(procesobase());
                 CargarPersonal(); Limpiar();
                 //MessageBox.Show("Persona Editada");
 
@@ -196,21 +178,7 @@ namespace S02_01Presentacion
         {
             try
             {
-                RegistroPersonal personal = new RegistroPersonal();
-
-                string hora, fecha;
-                hora = DateTime.Now.ToString("hh:mm");
-                fecha = DateTime.Now.ToString("dd/MM/yyyy");
-
-                personal.codEmpleado = Convert.ToInt32(txtCodigoEmpleado.Text.Trim());
-                personal.nombreEmpleado = txtNombre.Text.Trim();
-                personal.identificacion = txtIdEmpleado.Text.Trim();
-                personal.posicion = txtPosicion.Text.Trim();
-                personal.area = txtArea.Text.Trim();
-                personal.Fecha = fecha;
-                //personal.HoraEntrada = "--:--";
-                personal.HoraSalida = hora;
-                S02_02LogicaNegocio.Logica.ModificarPersonal(personal);
+                S02_02LogicaNegocio.Logica.ModificarHoraSalida(procesobase());
                 CargarPersonal(); Limpiar();
                 //MessageBox.Show("Persona Editada");
 
