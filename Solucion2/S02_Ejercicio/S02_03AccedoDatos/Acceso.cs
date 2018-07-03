@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using S03_04Entidades;
 using System.Collections;
+using S02_04Entidades;
 
-namespace S03_03AccedoDatos
+namespace S02_03AccedoDatos
 {
     public class Acceso
     {
         #region ATRIBUTOS
-
         private string strconexion = Properties.Settings.Default.conexion;
         private SqlConnection objconexion;
-
         #endregion
 
         #region CONSTRUCTOR
@@ -85,9 +83,9 @@ namespace S03_03AccedoDatos
             }
         }
 
-        public List<RegistroPersonas> ObtenerPersonas(SQLSentencia objsentencia)
+        public List<RegistroPersonal> ObtenerPersonal(SQLSentencia objsentencia)
         {
-            List<RegistroPersonas> lstresultados = new List<RegistroPersonas>();
+            List<RegistroPersonal> lstresultados = new List<RegistroPersonal>();
             System.Data.DataTable dt = new System.Data.DataTable();
             try
             {
@@ -105,19 +103,18 @@ namespace S03_03AccedoDatos
 
                 foreach (System.Data.DataRow item in dt.Rows)
                 {
-                    RegistroPersonas RegPerson = new RegistroPersonas();
+                    RegistroPersonal RegPersonal = new RegistroPersonal();
 
-                    RegPerson.identificacion = Convert.ToInt32(item.ItemArray[0].ToString());
-                    RegPerson.nombre = item.ItemArray[1].ToString();
-                    RegPerson.apellido = item.ItemArray[2].ToString();
-                    RegPerson.edad = Convert.ToInt32(item.ItemArray[3].ToString());
-                    RegPerson.correo = item.ItemArray[4].ToString();
-                    RegPerson.tetefono = Convert.ToInt32(item.ItemArray[5].ToString());
-                    RegPerson.pais = item.ItemArray[6].ToString();
-                    RegPerson.ciudad = item.ItemArray[7].ToString();
-                    RegPerson.detalles = item.ItemArray[8].ToString();
+                    RegPersonal.codEmpleado = Convert.ToInt32(item.ItemArray[0].ToString());
+                    RegPersonal.nombreEmpleado = item.ItemArray[1].ToString();
+                    RegPersonal.identificacion = item.ItemArray[2].ToString();
+                    RegPersonal.posicion = item.ItemArray[3].ToString();
+                    RegPersonal.area = item.ItemArray[4].ToString();
+                    RegPersonal.Fecha = item.ItemArray[5].ToString(); //convertir a nvarchar  en db
+                    RegPersonal.HoraEntrada = item.ItemArray[7].ToString(); //crear item en db como nvarchar 
+                    RegPersonal.HoraSalida = item.ItemArray[8].ToString(); //crear item en db como nvarchar 
 
-                    lstresultados.Add(RegPerson);
+                    lstresultados.Add(RegPersonal);
                 }
             }
             catch (Exception ex)
@@ -133,5 +130,6 @@ namespace S03_03AccedoDatos
         }
 
         #endregion
+
     }
 }
