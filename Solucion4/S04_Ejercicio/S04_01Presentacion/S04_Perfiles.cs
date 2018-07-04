@@ -14,6 +14,12 @@ namespace S04_01Presentacion
 {
     public partial class S04_Perfiles : Form
     {
+        public S04_Perfiles()
+        {
+            InitializeComponent();
+        }
+
+        #region CargarPerfiles
         private void CargarPerfiles()
         {
             try
@@ -52,6 +58,9 @@ namespace S04_01Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region Limpiar
         private void Limpiar()
         {
             this.txtCodigo.Text = String.Empty;
@@ -59,11 +68,9 @@ namespace S04_01Presentacion
             this.cboEstado.SelectedIndex = 0;
             this.txtCodigo.Focus();
         }
-        public S04_Perfiles()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
+        #region Accion Botones
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -130,6 +137,9 @@ namespace S04_01Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region evento CellClick
         private void dgvPerfiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -145,6 +155,12 @@ namespace S04_01Presentacion
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        #endregion
+
+        private void S04_Perfiles_Load(object sender, EventArgs e)
+        {
+            CargarPerfiles();
         }
     }
 }

@@ -75,6 +75,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(317, 166);
             this.dgvUsuarios.TabIndex = 17;
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // btnGuardar
             // 
@@ -162,6 +163,7 @@
             this.Controls.Add(this.label1);
             this.Name = "S04_Usuarios";
             this.Text = "S04_Usuarios";
+            this.Load += new System.EventHandler(this.S04_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

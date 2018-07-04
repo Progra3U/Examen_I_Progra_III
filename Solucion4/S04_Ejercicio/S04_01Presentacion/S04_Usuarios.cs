@@ -14,7 +14,11 @@ namespace S04_01Presentacion
 {
     public partial class S04_Usuarios : Form
     {
-
+        public S04_Usuarios()
+        {
+            InitializeComponent();
+        }
+        #region cargar Usuarios
         private void CargarUsuarios()
         {
             try
@@ -53,6 +57,9 @@ namespace S04_01Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region Limpiar
         private void Limpiar()
         {
             this.txtUsuario.Text = String.Empty;
@@ -60,11 +67,9 @@ namespace S04_01Presentacion
             this.cboEstado.SelectedIndex = 0;
             this.txtUsuario.Focus();
         }
-        public S04_Usuarios()
-        {
-            InitializeComponent();
-        }
+        #endregion
 
+        #region Accion Botones
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -132,12 +137,10 @@ namespace S04_01Presentacion
             }
         
     }
+        #endregion
+
+        #region evento CellContentClick
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -153,5 +156,13 @@ namespace S04_01Presentacion
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+
+        #region Load
+        private void S04_Usuarios_Load(object sender, EventArgs e)
+        {
+            CargarUsuarios();
+        }
+        #endregion
     }
 }

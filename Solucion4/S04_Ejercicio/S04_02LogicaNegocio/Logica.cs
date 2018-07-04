@@ -57,6 +57,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static List<Usuarios> ObtenerUsuarios()
         {
             try
@@ -74,6 +75,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static int ModificarUsuarios(Usuarios usuario)
         {
             try
@@ -115,6 +117,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static int EliminarUsuarios(Usuarios usuario)
         {
             try
@@ -144,6 +147,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static bool VerificarUsuario(Usuarios usuario)
         {
             try
@@ -264,6 +268,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static List<Perfiles> ObtenerPerfiles()
         {
             try
@@ -281,6 +286,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static int ModificarPerfil(Perfiles perfil)
         {
             try
@@ -322,6 +328,7 @@ namespace S04_02LogicaNegocio
                 throw ex;
             }
         }
+
         public static int EliminarPerfil(Perfiles perfil)
         {
             try

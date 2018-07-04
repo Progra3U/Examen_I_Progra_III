@@ -54,6 +54,7 @@
             this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPerfiles.Size = new System.Drawing.Size(307, 237);
             this.dgvPerfiles.TabIndex = 17;
+            this.dgvPerfiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerfiles_CellClick);
             // 
             // cboEstado
             // 
@@ -159,6 +160,7 @@
             this.Controls.Add(this.label1);
             this.Name = "S04_Perfiles";
             this.Text = "S04_Perfiles";
+            this.Load += new System.EventHandler(this.S04_Perfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

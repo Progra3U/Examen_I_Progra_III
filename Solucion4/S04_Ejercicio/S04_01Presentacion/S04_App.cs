@@ -15,18 +15,28 @@ namespace S04_01Presentacion
     public partial class S04_App : Form
     {
         private string nombreusuario;
+        public S04_App()
+        {
+            InitializeComponent();
+        }
+
+        #region Pasar NOMBREUSUARIO
         public string NOMBREUSUARIO
         {
             get { return this.nombreusuario; }
             set { this.nombreusuario = value; }
         }
+        #endregion
 
+        #region MostrarNombre
         public void MostrarNombre()
         {
             this.tsslNomUsuario.Text = nombreusuario;
             //el el pie del formulario
         }
+        #endregion
 
+        #region CargarOpcionesMenuSegunPerfil
         public void CargarOpcionesMenuSegunPerfil()
         {
             try
@@ -94,12 +104,9 @@ namespace S04_01Presentacion
                 throw ex;
             }
         }
+        #endregion
 
-        public S04_App()
-        {
-            InitializeComponent();
-        }
-
+        #region ToolStripMenuItem
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -114,5 +121,6 @@ namespace S04_01Presentacion
         {
             S04_Perfiles frm = new S04_Perfiles(); frm.ShowDialog();
         }
+        #endregion
     }
 }
