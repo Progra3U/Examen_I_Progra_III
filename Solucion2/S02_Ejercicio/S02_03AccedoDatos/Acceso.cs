@@ -105,15 +105,15 @@ namespace S02_03AccedoDatos
                 {
                     RegistroPersonal RegPersonal = new RegistroPersonal();
 
-                    RegPersonal.codEmpleado = Convert.ToInt32(item.ItemArray[0].ToString());
+                    RegPersonal.codEntrada = Convert.ToInt32(item.ItemArray[0].ToString());
                     RegPersonal.nombreEmpleado = item.ItemArray[1].ToString();
-                    RegPersonal.identificacion = item.ItemArray[2].ToString();
+                    RegPersonal.identificacion = Convert.ToInt32(item.ItemArray[2].ToString());
                     RegPersonal.posicion = item.ItemArray[3].ToString();
                     RegPersonal.area = item.ItemArray[4].ToString();
-                    RegPersonal.FechaEntrada = item.ItemArray[5].ToString(); //convertir a nvarchar  en db
-                    RegPersonal.HoraEntrada = item.ItemArray[6].ToString(); //crear item en db como nvarchar 
-                    RegPersonal.FechaSalida= item.ItemArray[7].ToString();
-                    RegPersonal.HoraSalida = item.ItemArray[8].ToString(); //crear item en db como nvarchar 
+                    RegPersonal.fechaEntrada = item.ItemArray[5].ToString(); //convertir a nvarchar  en db
+                    RegPersonal.horaEntrada = item.ItemArray[6].ToString(); //crear item en db como nvarchar 
+                    RegPersonal.fechaSalida= item.ItemArray[7].ToString();
+                    RegPersonal.horaSalida = item.ItemArray[8].ToString(); //crear item en db como nvarchar 
 
                     lstresultados.Add(RegPersonal);
                 }

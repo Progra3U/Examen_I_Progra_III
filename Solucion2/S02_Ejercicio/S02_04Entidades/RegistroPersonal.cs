@@ -14,12 +14,14 @@ namespace S02_04Entidades
     
     public partial class RegistroPersonal
     {
-        public int codEmpleado { get; set; }
+        public int codEntrada { get; set; }
         public string nombreEmpleado { get; set; }
-        public string identificacion { get; set; }
+        public int identificacion { get; set; }
         public string posicion { get; set; }
         public string area { get; set; }
-        public System.TimeSpan entrada { get; set; }
-        public System.TimeSpan salida { get; set; }
+        public string fechaEntrada { get; set; }
+        public string horaEntrada { get; set; }
+        public string fechaSalida { get; set; }
+        public string horaSalida { get; set; }
     }
 }

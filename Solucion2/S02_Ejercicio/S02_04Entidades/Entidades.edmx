@@ -4,42 +4,45 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ExamenIPrograIIIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ExamenIPrograIIIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="RegistroPersonal">
           <Key>
-            <PropertyRef Name="codEmpleado" />
+            <PropertyRef Name="codEntrada" />
           </Key>
-          <Property Name="codEmpleado" Type="int" Nullable="false" />
+          <Property Name="codEntrada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreEmpleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="identificacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="identificacion" Type="int" Nullable="false" />
           <Property Name="posicion" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="area" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="entrada" Type="time" Precision="7" Nullable="false" />
-          <Property Name="salida" Type="time" Precision="7" Nullable="false" />
+          <Property Name="fechaEntrada" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="horaEntrada" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fechaSalida" Type="nvarchar" MaxLength="50" />
+          <Property Name="horaSalida" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="ExamenIPrograIIIModelStoreContainer">
           <EntitySet Name="RegistroPersonal" EntityType="Self.RegistroPersonal" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ExamenIPrograIIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ExamenIPrograIIIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RegistroPersonals" EntityType="ExamenIPrograIIIModel.RegistroPersonal" />
+        </EntityContainer>
         <EntityType Name="RegistroPersonal">
           <Key>
-            <PropertyRef Name="codEmpleado" />
+            <PropertyRef Name="codEntrada" />
           </Key>
-          <Property Name="codEmpleado" Type="Int32" Nullable="false" />
-          <Property Name="nombreEmpleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="posicion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="entrada" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="salida" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="codEntrada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEmpleado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="identificacion" Type="Int32" Nullable="false" />
+          <Property Name="posicion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fechaEntrada" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="horaEntrada" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fechaSalida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="horaSalida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="ExamenIPrograIIIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RegistroPersonals" EntityType="Self.RegistroPersonal" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -49,13 +52,15 @@
           <EntitySetMapping Name="RegistroPersonals">
             <EntityTypeMapping TypeName="ExamenIPrograIIIModel.RegistroPersonal">
               <MappingFragment StoreEntitySet="RegistroPersonal">
-                <ScalarProperty Name="codEmpleado" ColumnName="codEmpleado" />
-                <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
-                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
-                <ScalarProperty Name="posicion" ColumnName="posicion" />
+                <ScalarProperty Name="horaSalida" ColumnName="horaSalida" />
+                <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+                <ScalarProperty Name="horaEntrada" ColumnName="horaEntrada" />
+                <ScalarProperty Name="fechaEntrada" ColumnName="fechaEntrada" />
                 <ScalarProperty Name="area" ColumnName="area" />
-                <ScalarProperty Name="entrada" ColumnName="entrada" />
-                <ScalarProperty Name="salida" ColumnName="salida" />
+                <ScalarProperty Name="posicion" ColumnName="posicion" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+                <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
+                <ScalarProperty Name="codEntrada" ColumnName="codEntrada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
