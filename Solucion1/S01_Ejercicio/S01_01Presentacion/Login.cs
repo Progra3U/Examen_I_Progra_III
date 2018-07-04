@@ -21,25 +21,22 @@ namespace S01_01Presentacion
             InitializeComponent();
           
     }
-        private int intentos = 0;
+        private int intentos = 3;
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            /*
+             try
             {             
-                    Usuario usuarios = new Usuario();
+                    Usuarios usuarios = new Usuarios();
                     usuarios.nombreUsuario = txtUserName.Text.Trim();
                     usuarios.pass = txtPassword.Text.Trim();
 
 
-                if (LN.VerificarUsuario(usuarios)) //Si el usuario esta bien
+                if (LN.VerificarUsuarios(usuarios)) //Si el usuario esta bien
                 {
-
-
                     MessageBox.Show("Usuario correcto", "Aviso", MessageBoxButtons.OK);
                     nuevaPantalla();
-
                 }
-
                 else
                 {                 
                      MessageBox.Show("Contraseña incorrecta o Usuario inactivo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,20 +58,54 @@ namespace S01_01Presentacion
                   catch (Exception ex)
                      {
                          throw ex;
+            }*/
+            try
+            {
+                
+                Usuarios usuarios = new Usuarios();
+                usuarios.nombreUsuario = this.txtUserName.Text.Trim();
+                usuarios.pass = this.txtPassword.Text.Trim();
+                usuarios.activo = true;
+                if (LN.VerificarUsuarios(usuarios))
+                {
+                    // MessageBox.Show("Usuario si existe");
+                    Bienvenida bn = new Bienvenida();
+                    bn.ShowDialog();
+                    intentos = 3;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no existe");
+                    intentos--;
+                    if (intentos == 0)
+                    {
+                        MessageBox.Show("Usuario Bloqueado");
+                        usuarios.activo = false;
+                        S01_02LogicaNegocio.LN.ModificarUsuarios(usuarios);
+                    }
+
+                }
+                
+
             }
-        }
-
-        public static void nuevaPantalla()
-        {
-            Bienvenida bn = new Bienvenida();
-
-            bn.Show();
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
-        private static void NewMethod1(Usuario usuarios)
+
+        /* public static void nuevaPantalla()
+         {
+             Bienvenida bn = new Bienvenida();
+
+             bn.Show();
+
+         }*/
+
+        /*private static void NewMethod1(Usuarios usuarios)
         {
-            bool retorno = LN.VerificarUsuario(usuarios);
+            bool retorno = LN.VerificarUsuarios(usuarios);
             if (retorno != true)
             {
                 MessageBox.Show("Usuario no esta activo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -87,7 +118,7 @@ namespace S01_01Presentacion
                 nuevaPantalla();
             }
 
-        }
+        }*/
 
     }
 }

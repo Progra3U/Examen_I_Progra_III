@@ -103,7 +103,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ExamenIPrograIIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Perfile">
+        <EntityType Name="Perfiles">
           <Key>
             <PropertyRef Name="codPerfil" />
           </Key>
@@ -114,7 +114,7 @@
           <NavigationProperty Name="Perfile1" Relationship="Self.FK_Perfiles_Perfiles1" FromRole="Perfiles1" ToRole="Perfiles" />
           <NavigationProperty Name="Usuarios" Relationship="Self.UsuariosxPerfiles" FromRole="Perfiles" ToRole="Usuarios" />
         </EntityType>
-        <EntityType Name="Usuario">
+        <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="nombreUsuario" />
           </Key>
@@ -126,8 +126,8 @@
           <NavigationProperty Name="Perfiles" Relationship="Self.UsuariosxPerfiles" FromRole="Usuarios" ToRole="Perfiles" />
         </EntityType>
         <Association Name="FK_Perfiles_Perfiles1">
-          <End Role="Perfiles" Type="Self.Perfile" Multiplicity="1" />
-          <End Role="Perfiles1" Type="Self.Perfile" Multiplicity="0..1" />
+          <End Role="Perfiles" Type="ExamenIPrograIIIModel.Perfiles" Multiplicity="1" />
+          <End Role="Perfiles1" Type="ExamenIPrograIIIModel.Perfiles" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Perfiles">
               <PropertyRef Name="codPerfil" />
@@ -138,8 +138,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuarios_Usuarios">
-          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Usuarios1" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="ExamenIPrograIIIModel.Usuarios" Multiplicity="1" />
+          <End Role="Usuarios1" Type="ExamenIPrograIIIModel.Usuarios" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="nombreUsuario" />
@@ -150,23 +150,23 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="UsuariosxPerfiles">
-          <End Role="Perfiles" Type="Self.Perfile" Multiplicity="*" />
-          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
+          <End Role="Perfiles" Type="ExamenIPrograIIIModel.Perfiles" Multiplicity="*" />
+          <End Role="Usuarios" Type="ExamenIPrograIIIModel.Usuarios" Multiplicity="*" />
         </Association>
         <EntityContainer Name="ExamenIPrograIIIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Perfiles" EntityType="Self.Perfile" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="Perfiles1" EntityType="ExamenIPrograIIIModel.Perfiles" />
+          <EntitySet Name="Usuarios1" EntityType="ExamenIPrograIIIModel.Usuarios" />
           <AssociationSet Name="FK_Perfiles_Perfiles1" Association="Self.FK_Perfiles_Perfiles1">
-            <End Role="Perfiles" EntitySet="Perfiles" />
-            <End Role="Perfiles1" EntitySet="Perfiles" />
+            <End Role="Perfiles" EntitySet="Perfiles1" />
+            <End Role="Perfiles1" EntitySet="Perfiles1" />
           </AssociationSet>
           <AssociationSet Name="FK_Usuarios_Usuarios" Association="Self.FK_Usuarios_Usuarios">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Usuarios1" EntitySet="Usuarios" />
+            <End Role="Usuarios" EntitySet="Usuarios1" />
+            <End Role="Usuarios1" EntitySet="Usuarios1" />
           </AssociationSet>
           <AssociationSet Name="UsuariosxPerfiles" Association="Self.UsuariosxPerfiles">
-            <End Role="Perfiles" EntitySet="Perfiles" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Perfiles" EntitySet="Perfiles1" />
+            <End Role="Usuarios" EntitySet="Usuarios1" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -175,8 +175,8 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ExamenIPrograIIIModelStoreContainer" CdmEntityContainer="ExamenIPrograIIIEntities">
-          <EntitySetMapping Name="Perfiles">
-            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.Perfile">
+          <EntitySetMapping Name="Perfiles1">
+            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.Perfiles">
               <MappingFragment StoreEntitySet="Perfiles">
                 <ScalarProperty Name="codPerfil" ColumnName="codPerfil" />
                 <ScalarProperty Name="nombrePerfil" ColumnName="nombrePerfil" />
@@ -184,8 +184,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.Usuario">
+          <EntitySetMapping Name="Usuarios1">
+            <EntityTypeMapping TypeName="ExamenIPrograIIIModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="pass" ColumnName="pass" />

@@ -12,19 +12,19 @@ namespace S01_01Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Perfile
+    public partial class Perfiles
     {
-        public Perfile()
+        public Perfiles()
         {
-            this.Usuarios = new HashSet<Usuario>();
+            this.Usuarios = new HashSet<Usuarios>();
         }
     
         public int codPerfil { get; set; }
         public string nombrePerfil { get; set; }
         public bool activo { get; set; }
     
-        public virtual Perfile Perfiles1 { get; set; }
-        public virtual Perfile Perfile1 { get; set; }
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual Perfiles Perfiles1 { get; set; }
+        public virtual Perfiles Perfile1 { get; set; }
+        public virtual ICollection<Usuarios> Usuarios { get; set; }
     }
 }

@@ -26,8 +26,8 @@ namespace S01_03AccedoDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MACFS4ZYZM\\MSSQLSERVER02;Initial Catalog=ExamenIPrograIII;Integrated " +
-            "Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JPRR1ER\\SQLSERVER;Initial Catalog=ExamenIPrograIII;User ID=sa;Passwor" +
+            "d=123456")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));

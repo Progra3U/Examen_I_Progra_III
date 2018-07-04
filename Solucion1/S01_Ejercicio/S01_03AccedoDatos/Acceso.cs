@@ -85,9 +85,9 @@ namespace S01_03AccedoDatos
             }
         }
 
-        public List<Usuario> ObtenerUsuarios(SQLSentencia objsentencia)
+        public List<Usuarios> ObtenerUsuarios(SQLSentencia objsentencia)
         {
-            List<Usuario> lstresultados = new List<Usuario>();
+            List<Usuarios> lstresultados = new List<Usuarios>();
             System.Data.DataTable dt = new System.Data.DataTable();
             try
             {
@@ -106,7 +106,7 @@ namespace S01_03AccedoDatos
 
                 foreach (System.Data.DataRow item in dt.Rows)
                 {
-                    Usuario usuario = new Usuario();
+                    Usuarios usuario = new Usuarios();
 
                     usuario.nombreUsuario = item.ItemArray[0].ToString();
                     usuario.pass = item.ItemArray[1].ToString();

@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f77db8fe367e4a779759939e66e2bcc2" Name="Diagram1">
-        <EntityTypeShape EntityType="ExamenIPrograIIIModel.Perfile" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExamenIPrograIIIModel.Usuario" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamenIPrograIIIModel.Perfiles" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamenIPrograIIIModel.Usuarios" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ExamenIPrograIIIModel.FK_Perfiles_Perfiles1" ManuallyRouted="false" />
         <AssociationConnector Association="ExamenIPrograIIIModel.FK_Usuarios_Usuarios" ManuallyRouted="false" />
         <AssociationConnector Association="ExamenIPrograIIIModel.UsuariosxPerfiles" ManuallyRouted="false" />

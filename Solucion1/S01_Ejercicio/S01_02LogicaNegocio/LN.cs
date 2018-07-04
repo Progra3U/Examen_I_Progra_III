@@ -16,8 +16,8 @@ namespace S01_02LogicaNegocio
     {
         #region USUARIOS
 
-       
-        public static List<Usuario> ObtenerUsuarios()
+
+        /*public static List<Usuarios> ObtenerUsuarios()
         {
             try
             {
@@ -33,38 +33,34 @@ namespace S01_02LogicaNegocio
             {
                 throw ex;
             }
-        }
-        public static int ModificarUsuarios(Usuario usuarios)
+        }*/
+        public static int ModificarUsuarios(Usuarios usuarios)
         {
             try
             {
-                ArrayList lstparametros = new ArrayList(); //se define lista de valores
+                ArrayList lstparametros = new ArrayList(); 
                 SQLSentencia sentencia = new SQLSentencia();
 
-                sentencia.PETICION = @"UPDATE Usuarios SET pass = @pass, activo = @activo WHERE nombreUsuario = @nombreUsuario";
+                sentencia.PETICION = @"UPDATE Usuarios SET activo = @activo WHERE nombreUsuario = @nombreUsuario";
 
-                //Defino parametros y sus caracteristicas
                 SqlParameter nomusuarioparametro = new SqlParameter();
                 nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
                 nomusuarioparametro.ParameterName = "@nombreUsuario";
                 nomusuarioparametro.Value = usuarios.nombreUsuario;
 
-                SqlParameter passparametro = new SqlParameter();
+                /*SqlParameter passparametro = new SqlParameter();
                 passparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
                 passparametro.ParameterName = "@pass";
-                passparametro.Value = usuarios.pass;
+                passparametro.Value = usuarios.pass;*/
 
                 SqlParameter activoparametro = new SqlParameter();
                 activoparametro.SqlDbType = System.Data.SqlDbType.Bit;
                 activoparametro.ParameterName = "@activo";
                 activoparametro.Value = usuarios.activo;
 
-                //Agregando en la lista de valores 
                 lstparametros.Add(nomusuarioparametro);
-                lstparametros.Add(passparametro);
                 lstparametros.Add(activoparametro);
 
-                //Asigna al atributo de la clase SQLSentencia la lista de valores
                 sentencia.LSTPARAMETROS = lstparametros;
 
                 Acceso objacceso = new Acceso();
@@ -76,9 +72,9 @@ namespace S01_02LogicaNegocio
             }
         }
 
-        public static bool VerificarUsuario(Usuario usuario)
+        public static bool VerificarUsuarios(Usuarios usuarios)
         {
-            try
+            /*try
             {
                 ArrayList lstparametros = new ArrayList(); //se define lista de valores
 
@@ -116,7 +112,23 @@ namespace S01_02LogicaNegocio
             catch (Exception ex)
             {
                 throw ex;
+            }*/
+            try
+            {
+                SQLSentencia sentencia = new SQLSentencia();
+                sentencia.PETICION = @"select nombreUsuario, pass, activo from Usuarios where activo = '" + usuarios.activo + "' and nombreUsuario = '" + usuarios.nombreUsuario + "' and pass = '" + usuarios.pass + "'";
+
+                S01_03AccedoDatos.Acceso objacceso = new S01_03AccedoDatos.Acceso();
+                List<Usuarios> lstresultados = objacceso.ObtenerUsuarios(sentencia);
+                if (lstresultados.Count > 0)
+                    return true;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return false;
 
         }
     }
