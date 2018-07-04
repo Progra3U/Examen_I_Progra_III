@@ -93,19 +93,19 @@
             // modulo01ToolStripMenuItem
             // 
             this.modulo01ToolStripMenuItem.Name = "modulo01ToolStripMenuItem";
-            this.modulo01ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.modulo01ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modulo01ToolStripMenuItem.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem
             // 
             this.modulo02ToolStripMenuItem.Name = "modulo02ToolStripMenuItem";
-            this.modulo02ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.modulo02ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modulo02ToolStripMenuItem.Text = "Modulo 02";
             // 
             // modulo03ToolStripMenuItem
             // 
             this.modulo03ToolStripMenuItem.Name = "modulo03ToolStripMenuItem";
-            this.modulo03ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.modulo03ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modulo03ToolStripMenuItem.Text = "Modulo 03";
             // 
             // finanzasToolStripMenuItem
@@ -120,13 +120,13 @@
             // modulo01ToolStripMenuItem1
             // 
             this.modulo01ToolStripMenuItem1.Name = "modulo01ToolStripMenuItem1";
-            this.modulo01ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.modulo01ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.modulo01ToolStripMenuItem1.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem1
             // 
             this.modulo02ToolStripMenuItem1.Name = "modulo02ToolStripMenuItem1";
-            this.modulo02ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.modulo02ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.modulo02ToolStripMenuItem1.Text = "Modulo 02";
             // 
             // proveduriaToolStripMenuItem
@@ -142,19 +142,19 @@
             // modulo01ToolStripMenuItem2
             // 
             this.modulo01ToolStripMenuItem2.Name = "modulo01ToolStripMenuItem2";
-            this.modulo01ToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.modulo01ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.modulo01ToolStripMenuItem2.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem2
             // 
             this.modulo02ToolStripMenuItem2.Name = "modulo02ToolStripMenuItem2";
-            this.modulo02ToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.modulo02ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.modulo02ToolStripMenuItem2.Text = "Modulo 02";
             // 
             // modulo03ToolStripMenuItem1
             // 
             this.modulo03ToolStripMenuItem1.Name = "modulo03ToolStripMenuItem1";
-            this.modulo03ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.modulo03ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.modulo03ToolStripMenuItem1.Text = "Modulo 03";
             // 
             // mantenimientoToolStripMenuItem

@@ -24,12 +24,12 @@ namespace S04_01Presentacion
             try
             {
                 Usuarios usuarios = new Usuarios();
-                usuarios.nombreUsuario = txtUserName.Text.Trim();
+                usuarios.nombreUsuario= txtUserName.Text.Trim();
                 usuarios.pass = txtPassword.Text.Trim();
 
                 if (Logica.VerificarUsuario(usuarios)) //Si el usuario esta bien
                 {
-                    S04_App frm = new S04_App();
+                   S04_App frm = new S04_App();
 
                     frm.NOMBREUSUARIO = txtUserName.Text.Trim(); //Asigna usuario de inicio de sesion
                     frm.MostrarNombre(); //Muestrelo en la parte inferior del menu
@@ -50,3 +50,4 @@ namespace S04_01Presentacion
         }
     }
 }
+

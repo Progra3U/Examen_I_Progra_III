@@ -66,10 +66,9 @@ namespace S04_03AccedoDatos
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 //Tiene asignado parametros? 
-                if (objsentencia.LSTPARAMETROS.Count > 0)
-                    //Agrega como parte de la configuracion los parametros a ejecutar
-                    cmd.Parameters.AddRange(objsentencia.LSTPARAMETROS.ToArray());
-
+                if (objsentencia.LSTPARAMETROS != null)
+                    if (objsentencia.LSTPARAMETROS.Count > 0)
+                        cmd.Parameters.AddRange(objsentencia.LSTPARAMETROS.ToArray());
                 ABRIR();
                 return cmd.ExecuteNonQuery();
 
@@ -106,7 +105,7 @@ namespace S04_03AccedoDatos
                 {
                     Usuarios usuario = new Usuarios();
 
-                    usuario.nomusuario = item.ItemArray[0].ToString();
+                    usuario.nombreUsuario = item.ItemArray[0].ToString();
                     usuario.pass = item.ItemArray[1].ToString();
                     usuario.activo = Convert.ToBoolean(item.ItemArray[2].ToString());
 
@@ -145,7 +144,7 @@ namespace S04_03AccedoDatos
                     Perfiles usuario = new Perfiles();
 
                     usuario.codPerfil = Convert.ToInt32(item.ItemArray[0].ToString());
-                    usuario.nomPerfil = item.ItemArray[1].ToString();
+                    usuario.nombrePerfil = item.ItemArray[1].ToString();
                     usuario.activo = Convert.ToBoolean(item.ItemArray[2].ToString());
 
                     lstresultados.Add(usuario);

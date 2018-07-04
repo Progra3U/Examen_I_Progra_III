@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using S04_03AccedoDatos;
 using S04_04Entidades;
 
+
 namespace S04_02LogicaNegocio
 {
     public class Logica
@@ -25,25 +26,25 @@ namespace S04_02LogicaNegocio
                 sentencia.PETICION = @"INSERT INTO Usuarios VALUES (@nombreUsuario, @pass, @activo)";
 
                 //Defino parametros y sus caracteristicas
-                SqlParameter nombreUsuario = new SqlParameter();
-                nombreUsuario.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nombreUsuario.ParameterName = "@nombreUsuario";
-                nombreUsuario.Value = usuario.nombreUsuario;
+                SqlParameter nomusuarioparametro = new SqlParameter();
+                nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
+                nomusuarioparametro.Value = usuario.nombreUsuario;
 
-                SqlParameter pass = new SqlParameter();
-                pass.SqlDbType = System.Data.SqlDbType.NVarChar;
-                pass.ParameterName = "@pass";
-                pass.Value = usuario.pass;
+                SqlParameter passparametro = new SqlParameter();
+                passparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                passparametro.ParameterName = "@pass";
+                passparametro.Value = usuario.pass;
 
-                SqlParameter activo = new SqlParameter();
-                activo.SqlDbType = System.Data.SqlDbType.Bit;
-                activo.ParameterName = "@activo";
-                activo.Value = usuario.activo;
+                SqlParameter activoparametro = new SqlParameter();
+                activoparametro.SqlDbType = System.Data.SqlDbType.Bit;
+                activoparametro.ParameterName = "@activo";
+                activoparametro.Value = usuario.activo;
 
                 //Agregando en la lista de valores 
-                lstparametros.Add(nombreUsuario);
-                lstparametros.Add(pass);
-                lstparametros.Add(activo);
+                lstparametros.Add(nomusuarioparametro);
+                lstparametros.Add(passparametro);
+                lstparametros.Add(activoparametro);
 
                 //Asigna al atributo de la clase SQLSentencia la lista de valores
                 sentencia.LSTPARAMETROS = lstparametros;
@@ -83,25 +84,25 @@ namespace S04_02LogicaNegocio
                 sentencia.PETICION = @"UPDATE Usuarios SET pass = @pass, activo = @activo WHERE nombreUsuario = @nombreUsuario";
 
                 //Defino parametros y sus caracteristicas
-                SqlParameter nombreUsuario = new SqlParameter();
-                nombreUsuario.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nombreUsuario.ParameterName = "@nombreUsuario";
-                nombreUsuario.Value = usuario.nombreUsuario;
+                SqlParameter nomusuarioparametro = new SqlParameter();
+                nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
+                nomusuarioparametro.Value = usuario.nombreUsuario;
 
-                SqlParameter pass = new SqlParameter();
-                pass.SqlDbType = System.Data.SqlDbType.NVarChar;
-                pass.ParameterName = "@pass";
-                pass.Value = usuario.pass;
+                SqlParameter passparametro = new SqlParameter();
+                passparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                passparametro.ParameterName = "@pass";
+                passparametro.Value = usuario.pass;
 
-                SqlParameter activo = new SqlParameter();
-                activo.SqlDbType = System.Data.SqlDbType.Bit;
-                activo.ParameterName = "@activo";
-                activo.Value = usuario.activo;
+                SqlParameter activoparametro = new SqlParameter();
+                activoparametro.SqlDbType = System.Data.SqlDbType.Bit;
+                activoparametro.ParameterName = "@activo";
+                activoparametro.Value = usuario.activo;
 
                 //Agregando en la lista de valores 
-                lstparametros.Add(nombreUsuario);
-                lstparametros.Add(pass);
-                lstparametros.Add(activo);
+                lstparametros.Add(nomusuarioparametro);
+                lstparametros.Add(passparametro);
+                lstparametros.Add(activoparametro);
 
                 //Asigna al atributo de la clase SQLSentencia la lista de valores
                 sentencia.LSTPARAMETROS = lstparametros;
@@ -124,13 +125,13 @@ namespace S04_02LogicaNegocio
                 sentencia.PETICION = @"DELETE FROM Usuarios WHERE nombreUsuario = @nombreUsuario";
 
                 //Defino parametros y sus caracteristicas
-                SqlParameter nombreUsuario = new SqlParameter();
-                nombreUsuario.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nombreUsuario.ParameterName = "@nombreUsuario";
-                nombreUsuario.Value = usuario.nombreUsuario;
+                SqlParameter nomusuarioparametro = new SqlParameter();
+                nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
+                nomusuarioparametro.Value = usuario.nombreUsuario;
 
                 //Agregando en la lista de valores 
-                lstparametros.Add(nombreUsuario);
+                lstparametros.Add(nomusuarioparametro);
 
                 //Asigna al atributo de la clase SQLSentencia la lista de valores
                 sentencia.LSTPARAMETROS = lstparametros;
@@ -153,19 +154,19 @@ namespace S04_02LogicaNegocio
                 sentencia.PETICION = @"SELECT nombreUsuario, pass, activo from Usuarios where nombreUsuario = @nombreUsuario and pass = @pass and activo = 1";
 
                 //Defino parametros y sus caracteristicas
-                SqlParameter nombreUsuario = new SqlParameter();
-                nombreUsuario.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nombreUsuario.ParameterName = "@nombreUsuario";
-                nombreUsuario.Value = usuario.nombreUsuario;
+                SqlParameter nomusuarioparametro = new SqlParameter();
+                nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
+                nomusuarioparametro.Value = usuario.nombreUsuario;
 
-                SqlParameter pass = new SqlParameter();
-                pass.SqlDbType = System.Data.SqlDbType.NVarChar;
-                pass.ParameterName = "@pass";
-                pass.Value = usuario.pass;
+                SqlParameter passparametro = new SqlParameter();
+                passparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
+                passparametro.ParameterName = "@pass";
+                passparametro.Value = usuario.pass;
 
                 //Agregando en la lista de valores 
-                lstparametros.Add(nombreUsuario);
-                lstparametros.Add(pass);
+                lstparametros.Add(nomusuarioparametro);
+                lstparametros.Add(passparametro);
 
                 //Asigna al atributo de la clase SQLSentencia la lista de valores
                 sentencia.LSTPARAMETROS = lstparametros;
@@ -186,6 +187,7 @@ namespace S04_02LogicaNegocio
             }
 
         }
+
         public static List<Perfiles> ObtenerPerfilesPorUsuario(Usuarios usuario)
         {
             try
@@ -198,7 +200,7 @@ namespace S04_02LogicaNegocio
                 //Defino parametros y sus caracteristicas
                 SqlParameter nomusuarioparametro = new SqlParameter();
                 nomusuarioparametro.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nomusuarioparametro.ParameterName = "@nomusuario";
+                nomusuarioparametro.ParameterName = "@nombreUsuario";
                 nomusuarioparametro.Value = usuario.nombreUsuario;
 
                 //Agregando en la lista de valores 
@@ -238,7 +240,7 @@ namespace S04_02LogicaNegocio
 
                 SqlParameter nombrePerfil = new SqlParameter();
                 nombrePerfil.SqlDbType = System.Data.SqlDbType.NVarChar;
-                nombrePerfil.ParameterName = "@nomperfil";
+                nombrePerfil.ParameterName = "@nombrePerfil";
                 nombrePerfil.Value = perfil.nombrePerfil;
 
                 SqlParameter activo = new SqlParameter();

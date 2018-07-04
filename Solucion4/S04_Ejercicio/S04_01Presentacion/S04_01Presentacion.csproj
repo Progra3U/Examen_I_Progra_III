@@ -85,6 +85,12 @@
     <EmbeddedResource Include="S04_Login.resx">
       <DependentUpon>S04_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S04_Perfiles.resx">
+      <DependentUpon>S04_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S04_Usuarios.resx">
+      <DependentUpon>S04_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
