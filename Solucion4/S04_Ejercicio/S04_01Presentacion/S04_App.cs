@@ -31,7 +31,7 @@ namespace S04_01Presentacion
         #region MostrarNombre
         public void MostrarNombre()
         {
-            this.tsslNomUsuario.Text = nombreusuario;
+            this.toolStripStatusLabel.Text = nombreusuario;
             //el el pie del formulario
         }
         #endregion
@@ -122,5 +122,6 @@ namespace S04_01Presentacion
             S04_Perfiles frm = new S04_Perfiles(); frm.ShowDialog();
         }
         #endregion
+
     }
 }

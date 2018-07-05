@@ -46,7 +46,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tsslNomUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UsuarioConectado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
@@ -93,19 +94,19 @@
             // modulo01ToolStripMenuItem
             // 
             this.modulo01ToolStripMenuItem.Name = "modulo01ToolStripMenuItem";
-            this.modulo01ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modulo01ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.modulo01ToolStripMenuItem.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem
             // 
             this.modulo02ToolStripMenuItem.Name = "modulo02ToolStripMenuItem";
-            this.modulo02ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modulo02ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.modulo02ToolStripMenuItem.Text = "Modulo 02";
             // 
             // modulo03ToolStripMenuItem
             // 
             this.modulo03ToolStripMenuItem.Name = "modulo03ToolStripMenuItem";
-            this.modulo03ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modulo03ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.modulo03ToolStripMenuItem.Text = "Modulo 03";
             // 
             // finanzasToolStripMenuItem
@@ -120,13 +121,13 @@
             // modulo01ToolStripMenuItem1
             // 
             this.modulo01ToolStripMenuItem1.Name = "modulo01ToolStripMenuItem1";
-            this.modulo01ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modulo01ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.modulo01ToolStripMenuItem1.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem1
             // 
             this.modulo02ToolStripMenuItem1.Name = "modulo02ToolStripMenuItem1";
-            this.modulo02ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modulo02ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.modulo02ToolStripMenuItem1.Text = "Modulo 02";
             // 
             // proveduriaToolStripMenuItem
@@ -142,19 +143,19 @@
             // modulo01ToolStripMenuItem2
             // 
             this.modulo01ToolStripMenuItem2.Name = "modulo01ToolStripMenuItem2";
-            this.modulo01ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.modulo01ToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.modulo01ToolStripMenuItem2.Text = "Modulo 01";
             // 
             // modulo02ToolStripMenuItem2
             // 
             this.modulo02ToolStripMenuItem2.Name = "modulo02ToolStripMenuItem2";
-            this.modulo02ToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.modulo02ToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.modulo02ToolStripMenuItem2.Text = "Modulo 02";
             // 
             // modulo03ToolStripMenuItem1
             // 
             this.modulo03ToolStripMenuItem1.Name = "modulo03ToolStripMenuItem1";
-            this.modulo03ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modulo03ToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.modulo03ToolStripMenuItem1.Text = "Modulo 03";
             // 
             // mantenimientoToolStripMenuItem
@@ -169,38 +170,45 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslNomUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.UsuarioConectado,
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // tsslNomUsuario
+            // UsuarioConectado
             // 
-            this.tsslNomUsuario.Name = "tsslNomUsuario";
-            this.tsslNomUsuario.Size = new System.Drawing.Size(111, 17);
-            this.tsslNomUsuario.Text = "Usuario Conectado:";
+            this.UsuarioConectado.Name = "UsuarioConectado";
+            this.UsuarioConectado.Size = new System.Drawing.Size(111, 17);
+            this.UsuarioConectado.Text = "Usuario Conectado:";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(28, 17);
+            this.toolStripStatusLabel.Text = "tool";
             // 
             // S04_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 393);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -232,9 +240,10 @@
         private System.Windows.Forms.ToolStripMenuItem modulo02ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modulo03ToolStripMenuItem1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel tsslNomUsuario;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioConectado;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }

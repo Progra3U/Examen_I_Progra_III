@@ -23,8 +23,6 @@ namespace S04_04Entidades
         public string nombrePerfil { get; set; }
         public bool activo { get; set; }
     
-        public virtual Perfiles Perfiles1 { get; set; }
-        public virtual Perfiles Perfile1 { get; set; }
         public virtual ICollection<Usuarios> Usuarios { get; set; }
     }
 }

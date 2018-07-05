@@ -95,10 +95,13 @@ namespace S04_03AccedoDatos
                 cmd.Connection = objconexion;
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                if (objsentencia.LSTPARAMETROS.Count > 0)
+                //if (objsentencia.LSTPARAMETROS.Count > 0)
+                    //cmd.Parameters.AddRange(objsentencia.LSTPARAMETROS.ToArray());
+
+                if (objsentencia.LSTPARAMETROS != null)
                     cmd.Parameters.AddRange(objsentencia.LSTPARAMETROS.ToArray());
 
-                SqlDataAdapter objcarga = new SqlDataAdapter(cmd);
+                    SqlDataAdapter objcarga = new SqlDataAdapter(cmd);
                 objcarga.Fill(dt);
 
                 foreach (System.Data.DataRow item in dt.Rows)

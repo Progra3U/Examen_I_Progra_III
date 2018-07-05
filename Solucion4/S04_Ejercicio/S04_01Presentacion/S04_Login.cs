@@ -24,7 +24,7 @@ namespace S04_01Presentacion
             try
             {
                 Usuarios usuarios = new Usuarios();
-                usuarios.nombreUsuario= txtUserName.Text.Trim();
+                usuarios.nombreUsuario = txtUserName.Text.Trim();
                 usuarios.pass = txtPassword.Text.Trim();
 
                 if (Logica.VerificarUsuario(usuarios)) //Si el usuario esta bien
@@ -45,7 +45,7 @@ namespace S04_01Presentacion
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Error: \n"+ex);
             }
         }
     }
